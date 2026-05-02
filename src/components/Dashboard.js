@@ -1,10 +1,14 @@
+import API_URL from '../apiConfig';
 import { useState, useEffect } from 'react';
+import API_URL from '../apiConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import API_URL from '../apiConfig';
 import { 
   faWallet, faArrowTrendUp, faArrowTrendDown,
   faArrowUp, faArrowDown, faEllipsisVertical,
   faChevronDown, faChevronUp, faTrash
 } from '@fortawesome/free-solid-svg-icons';
+import API_URL from '../apiConfig';
 import { 
   LineChart, Line, XAxis, YAxis, CartesianGrid, 
   Tooltip, ResponsiveContainer, PieChart, Pie, Cell 
@@ -62,9 +66,9 @@ export default function Dashboard({ onNavigate }) {
     
     try {
       const [balanceRes, summaryRes, txnsRes] = await Promise.all([
-        fetch('http://localhost:5000/api/balance'),
-        fetch('http://localhost:5000/api/summary'),
-        fetch('http://localhost:5000/api/transactions')
+        fetch('${API_URL}/api/balance'),
+        fetch('${API_URL}/api/summary'),
+        fetch('${API_URL}/api/transactions')
       ]);
 
       const balanceData = await balanceRes.json();
@@ -152,7 +156,7 @@ export default function Dashboard({ onNavigate }) {
   const handleDelete = async (id) => {
     setDeleting(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/transactions/${id}`, {
+      const response = await fetch(`${API_URL}/api/transactions/${id}`, {
         method: 'DELETE'
       });
       

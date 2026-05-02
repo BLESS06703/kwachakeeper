@@ -1,5 +1,8 @@
+import API_URL from '../apiConfig';
 import { useState, useEffect } from 'react';
+import API_URL from '../apiConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import API_URL from '../apiConfig';
 import { faSearch, faArrowDown, faArrowUp, faSync, faTrash, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const ITEMS_PER_PAGE = 10;
@@ -29,7 +32,7 @@ export default function Transactions() {
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:5000/api/transactions');
+      const response = await fetch('${API_URL}/api/transactions');
       const data = await response.json();
       
       const formatted = data.map(t => ({
@@ -79,7 +82,7 @@ export default function Transactions() {
   const handleDelete = async (id) => {
     setDeleting(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/transactions/${id}`, {
+      const response = await fetch(`${API_URL}/api/transactions/${id}`, {
         method: 'DELETE'
       });
       

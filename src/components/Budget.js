@@ -1,5 +1,8 @@
+import API_URL from '../apiConfig';
 import { useState, useEffect } from 'react';
+import API_URL from '../apiConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import API_URL from '../apiConfig';
 import { 
   faPiggyBank, faTriangleExclamation, faCheckCircle,
   faPlus, faXmark, faSync
@@ -60,8 +63,8 @@ export default function Budget() {
     
     try {
       const [txnsRes, budgetsRes] = await Promise.all([
-        fetch('http://localhost:5000/api/transactions'),
-        fetch('http://localhost:5000/api/budgets')
+        fetch('${API_URL}/api/transactions'),
+        fetch('${API_URL}/api/budgets')
       ]);
 
       const transactions = await txnsRes.json();
@@ -107,7 +110,7 @@ export default function Budget() {
     setSaving(true);
     
     try {
-      await fetch('http://localhost:5000/api/budgets', {
+      await fetch('${API_URL}/api/budgets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

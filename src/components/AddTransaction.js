@@ -1,5 +1,8 @@
+import API_URL from '../apiConfig';
 import { useState } from 'react';
+import API_URL from '../apiConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import API_URL from '../apiConfig';
 import { faXmark, faArrowUp, faArrowDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const categories = [
@@ -30,7 +33,7 @@ export default function AddTransaction({ onClose, onSuccess }) {
     };
     
     try {
-      const response = await fetch('http://localhost:5000/api/transactions', {
+      const response = await fetch('${API_URL}/api/transactions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(transaction),
