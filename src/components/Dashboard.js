@@ -66,9 +66,9 @@ export default function Dashboard({ onNavigate }) {
     
     try {
       const [balanceRes, summaryRes, txnsRes] = await Promise.all([
-        fetch('${API_URL}/api/balance'),
-        fetch('${API_URL}/api/summary'),
-        fetch('${API_URL}/api/transactions')
+        fetch(`${API_URL}/api/balance`),
+        fetch(`${API_URL}/api/summary`),
+        fetch(`${API_URL}/api/transactions`)
       ]);
 
       const balanceData = await balanceRes.json();

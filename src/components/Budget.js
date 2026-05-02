@@ -63,8 +63,8 @@ export default function Budget() {
     
     try {
       const [txnsRes, budgetsRes] = await Promise.all([
-        fetch('${API_URL}/api/transactions'),
-        fetch('${API_URL}/api/budgets')
+        fetch(`${API_URL}/api/transactions`),
+        fetch(`${API_URL}/api/budgets`)
       ]);
 
       const transactions = await txnsRes.json();
@@ -110,7 +110,7 @@ export default function Budget() {
     setSaving(true);
     
     try {
-      await fetch('${API_URL}/api/budgets', {
+      await fetch(`${API_URL}/api/budgets`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

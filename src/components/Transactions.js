@@ -32,7 +32,7 @@ export default function Transactions() {
     setError(null);
     
     try {
-      const response = await fetch('${API_URL}/api/transactions');
+      const response = await fetch(`${API_URL}/api/transactions`);
       const data = await response.json();
       
       const formatted = data.map(t => ({
