@@ -1,8 +1,6 @@
 import API_URL from '../apiConfig';
 import { useState, useEffect } from 'react';
-import API_URL from '../apiConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import API_URL from '../apiConfig';
 import { 
   faPiggyBank, faTriangleExclamation, faCheckCircle,
   faPlus, faXmark, faSync

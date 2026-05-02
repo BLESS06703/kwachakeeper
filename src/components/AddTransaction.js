@@ -1,8 +1,6 @@
 import API_URL from '../apiConfig';
 import { useState } from 'react';
-import API_URL from '../apiConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import API_URL from '../apiConfig';
 import { faXmark, faArrowUp, faArrowDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const categories = [

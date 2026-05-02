@@ -1,8 +1,6 @@
 import API_URL from '../apiConfig';
 import { useState, useEffect } from 'react';
-import API_URL from '../apiConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import API_URL from '../apiConfig';
 import { faSearch, faArrowDown, faArrowUp, faSync, faTrash, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const ITEMS_PER_PAGE = 10;
